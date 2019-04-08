@@ -101,6 +101,8 @@ let footerDom = document.querySelector('footer p').textContent = siteContent.foo
 
 
 // Task 3
+
+//Turn Nav Items Green
 navDom.forEach(function(item) {
     item.style.color = "green";
 });
@@ -124,5 +126,25 @@ navBarDom.appendChild(append);
 
 navBarDom.prepend(prepend);
 
-//Turn Nav Items Green
 
+
+// A little Stretch 
+
+let mainContentStyles = document.querySelectorAll('.text-content');
+
+mainContentStyles.forEach(function(item) {
+    item.style.color = "purple";
+});
+
+
+let ctaHeaderStyles = document.querySelectorAll('.cta-text h1');
+
+ctaHeaderStyles.forEach(function(item) {
+    item.style.color = "purple";
+});
+
+let contactContentStyles = document.querySelectorAll('.contact');
+
+contactContentStyles.forEach(function(item) {
+    item.style.color = "purple";
+});
