@@ -43,24 +43,28 @@ const siteContent = {
 
 // Task 1 Create Selectors To Point Data Into Elements
 
-// Footer
+// Navigation 
 
-let footerDom = document.querySelector('footer p').textContent = siteContent.footer.copyright;
+let logoDom = document.getElementById("logo-img");
+logoDom.setAttribute('src', siteContent["nav"]["img-src"]);
 
-//// Contact 
+let navDom = document.querySelectorAll('a');
+for (let i = 0; i < navDom.length; i++) {
+    navDom[i].textContent = siteContent.nav[`nav-item-${i+1}`];
+}
 
-let contactDom = document.querySelector('.contact');
-contactDom.querySelector('h4').textContent = siteContent.contact["contact-h4"];
+// CTA 
 
-let contactPDom = contactDom.querySelectorAll('p');
+let ctaH1Dom = document.querySelector('.cta-text h1').textContent = siteContent.cta.h1;
 
-contactPDom[0].textContent = siteContent.contact.address;
-contactPDom[1].textContent = siteContent.contact.phone;
-contactPDom[2].textContent = siteContent.contact.email;
+let ctaButtonDom = document.querySelector('.cta-text button').textContent = siteContent.cta.button;
+
+let ctaImgDom = document.getElementById('cta-img');
+ctaImgDom.setAttribute('src', siteContent.cta["img-src"]);
 
 // Middle Content
 
-let textContentDivDom = document.querySelectorAll('.text-content')
+let textContentDivDom = document.querySelectorAll('.text-content');
 
 //IS THERE A BETTER WAY TO DO THIS?? Doesn't Seem DRY
 textContentDivDom[0].querySelector('h4').textContent = siteContent["main-content"]["features-h4"];
@@ -78,22 +82,47 @@ textContentDivDom[4].querySelector('p').textContent = siteContent["main-content"
 let middleImgDom = document.getElementById("middle-img");
 middleImgDom.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
 
-// CTA 
 
-let ctaH1Dom = document.querySelector('.cta-text h1').textContent = siteContent.cta.h1;
+// Contact 
 
-let ctaButtonDom = document.querySelector('.cta-text button').textContent = siteContent.cta.button;
+let contactDom = document.querySelector('.contact');
+contactDom.querySelector('h4').textContent = siteContent.contact["contact-h4"];
 
-let ctaImgDom = document.getElementById('cta-img');
-ctaImgDom.setAttribute('src', siteContent.cta["img-src"]);
+let contactPDom = contactDom.querySelectorAll('p');
 
-// Navigation 
+contactPDom[0].textContent = siteContent.contact.address;
+contactPDom[1].textContent = siteContent.contact.phone;
+contactPDom[2].textContent = siteContent.contact.email;
 
-let logoDom = document.getElementById("logo-img");
-logoDom.setAttribute('src', siteContent["nav"]["img-src"]);
 
-let navDom = document.querySelectorAll('a');
-for (let i = 0; i < navDom.length; i++) {
-    navDom[i].textContent = siteContent.nav[`nav-item-${i+1}`];
-}
+// Footer
+
+let footerDom = document.querySelector('footer p').textContent = siteContent.footer.copyright;
+
+
+// Task 3
+navDom.forEach(function(item) {
+    item.style.color = "green";
+});
+
+
+let prepend = document.createElement('a');
+let append = document.createElement('a');
+
+
+prepend.textContent = "CASH!";
+prepend.href = "#";
+prepend.style.color = "green";
+
+append.textContent = "GLOBE!";
+append.href = "#";
+append.style.color = "green";
+
+let navBarDom = document.querySelector('nav');
+
+navBarDom.appendChild(append);
+
+navBarDom.prepend(prepend);
+
+//Turn Nav Items Green
 
