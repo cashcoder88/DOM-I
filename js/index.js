@@ -22,7 +22,7 @@ const siteContent = {
     "services-h4":"Services",
     "services-content": "Services content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
     "product-h4":"Product",
-    "product-content": "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
+    "product-content": "Product content elementum magna eros, ac posuere elvit tempus et. Suspendisse veltempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
     "vision-h4":"Vision",
     "vision-content": "Vision content elementum magna eros, ac posuere elvit tempus et. Suspendisse vel tempus odio, in interdutm nisi. Suspendisse eu ornare nisl. Nullam convallis augue justo, at imperdiet metus scelerisque quis.",
   },
@@ -40,3 +40,27 @@ const siteContent = {
 // Example: Update the img src for the logo
 let logo = document.getElementById("logo-img");
 logo.setAttribute('src', siteContent["nav"]["img-src"])
+
+// Task 1 Create Selectors To Point Data Into Elements
+
+// Footer
+
+let footerDom = document.querySelector('footer p').textContent = siteContent.footer.copyright;
+
+//// Contact 
+
+let contactDom = document.querySelector('.contact');
+contactDom.querySelector('h4').textContent = siteContent.contact["contact-h4"];
+
+let contactPDom = contactDom.querySelectorAll('p');
+
+contactPDom[0].textContent = siteContent.contact.address;
+contactPDom[1].textContent = siteContent.contact.phone;
+contactPDom[2].textContent = siteContent.contact.email;
+
+// Main Content
+
+let textContentDivDom = document.querySelector('.text-content');
+
+textContentDivDom[0].querySelector
+
