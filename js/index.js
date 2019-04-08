@@ -38,8 +38,8 @@ const siteContent = {
 };
 
 // Example: Update the img src for the logo
-let logo = document.getElementById("logo-img");
-logo.setAttribute('src', siteContent["nav"]["img-src"])
+//let logo = document.getElementById("logo-img");
+//logo.setAttribute('src', siteContent["nav"]["img-src"])
 
 // Task 1 Create Selectors To Point Data Into Elements
 
@@ -58,9 +58,42 @@ contactPDom[0].textContent = siteContent.contact.address;
 contactPDom[1].textContent = siteContent.contact.phone;
 contactPDom[2].textContent = siteContent.contact.email;
 
-// Main Content
+// Middle Content
 
-let textContentDivDom = document.querySelector('.text-content');
+let textContentDivDom = document.querySelectorAll('.text-content')
 
-textContentDivDom[0].querySelector
+//IS THERE A BETTER WAY TO DO THIS?? Doesn't Seem DRY
+textContentDivDom[0].querySelector('h4').textContent = siteContent["main-content"]["features-h4"];
+textContentDivDom[0].querySelector('p').textContent = siteContent["main-content"]["features-content"];
+textContentDivDom[1].querySelector('h4').textContent = siteContent["main-content"]["about-h4"];
+textContentDivDom[1].querySelector('p').textContent = siteContent["main-content"]["about-content"];
+textContentDivDom[2].querySelector('h4').textContent = siteContent["main-content"]["services-h4"];
+textContentDivDom[2].querySelector('p').textContent = siteContent["main-content"]["services-content"];
+textContentDivDom[3].querySelector('h4').textContent = siteContent["main-content"]["product-h4"];
+textContentDivDom[3].querySelector('p').textContent = siteContent["main-content"]["product-content"];
+textContentDivDom[4].querySelector('h4').textContent = siteContent["main-content"]["vision-h4"];
+textContentDivDom[4].querySelector('p').textContent = siteContent["main-content"]["vision-content"];
+
+
+let middleImgDom = document.getElementById("middle-img");
+middleImgDom.setAttribute('src', siteContent["main-content"]["middle-img-src"]);
+
+// CTA 
+
+let ctaH1Dom = document.querySelector('.cta-text h1').textContent = siteContent.cta.h1;
+
+let ctaButtonDom = document.querySelector('.cta-text button').textContent = siteContent.cta.button;
+
+let ctaImgDom = document.getElementById('cta-img');
+ctaImgDom.setAttribute('src', siteContent.cta["img-src"]);
+
+// Navigation 
+
+let logoDom = document.getElementById("logo-img");
+logoDom.setAttribute('src', siteContent["nav"]["img-src"]);
+
+let navDom = document.querySelectorAll('a');
+for (let i = 0; i < navDom.length; i++) {
+    navDom[i].textContent = siteContent.nav[`nav-item-${i+1}`];
+}
 
